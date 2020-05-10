@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float padding = 1f;
 
     private float xMin;
     private float xMax;
@@ -21,10 +22,10 @@ public class Player : MonoBehaviour
     private void SetUpMoveBounders()
     {
         var gameCamera = Camera.main;
-        xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x;
-        xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x;
-        yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y;
-        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y;
+        xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + padding;
+        xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - padding;
+        yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
+        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
     }
 
     // Update is called once per frame
