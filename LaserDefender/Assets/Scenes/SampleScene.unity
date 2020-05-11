@@ -282,12 +282,6 @@ PrefabInstance:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 744418663876590511, guid: 4d5289a990d39ae4aa37d7ffcb350624,
-        type: 3}
-      propertyPath: laserPrefab
-      value: 
-      objectReference: {fileID: 6637537386706079299, guid: 683afb3c41972e74aa374fc933a4694f,
-        type: 3}
     - target: {fileID: 744418663876590512, guid: 4d5289a990d39ae4aa37d7ffcb350624,
         type: 3}
       propertyPath: m_LocalPosition.x
