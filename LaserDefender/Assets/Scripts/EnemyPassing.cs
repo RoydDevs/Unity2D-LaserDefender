@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class EnemyPassing : MonoBehaviour
 {
-    [SerializeField] private WaveConfig waveConfig;
-    [SerializeField] private List<Transform> wayPoints;
-    [SerializeField] private float moveSpeed = 2f;
+    private WaveConfig waveConfig;
+    private List<Transform> wayPoints;
     private int wayPointIndex = 0;
     
     // Start is called before the first frame update
@@ -24,12 +23,17 @@ public class EnemyPassing : MonoBehaviour
         Move();
     }
 
+    public void SetWaveConfig(WaveConfig waveConfig)
+    {
+        this.waveConfig = waveConfig;
+    }
+
     private void Move()
     {
         if (wayPointIndex <= wayPoints.Count - 1)
         {
             var targetPosition = wayPoints[wayPointIndex].transform.position;
-            var movementThisFrame = moveSpeed * Time.deltaTime;
+            var movementThisFrame = waveConfig.GetMoveSpeed() * Time.deltaTime;
             this.transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, movementThisFrame);
 
             if (this.transform.position == targetPosition)
