@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4016146327201790188}
   - component: {fileID: 4047835616130629754}
   - component: {fileID: 708548558220285145}
-  - component: {fileID: 8416601600869736922}
-  m_Layer: 10
-  m_Name: Laser Player
+  - component: {fileID: 7246172926530042391}
+  m_Layer: 11
+  m_Name: Laser Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f4d9cf98870f25847b4fffea9cd4cc83, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d30a68e721192f84fb274941b6e770be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,13 +115,13 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.09, y: 0.57}
+  m_Offset: {x: 0, y: 0.000000029802322}
+  m_Size: {x: 0.09, y: 0.3814839}
   m_Direction: 0
---- !u!114 &8416601600869736922
+--- !u!114 &7246172926530042391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

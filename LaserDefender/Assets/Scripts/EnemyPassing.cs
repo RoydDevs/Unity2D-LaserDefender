@@ -12,7 +12,6 @@ public class EnemyPassing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("I am new enemy -> get path");
         wayPoints = waveConfig.GetWayPoints();
         transform.position = wayPoints[wayPointIndex].transform.position;
     }

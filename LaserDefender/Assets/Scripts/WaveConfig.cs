@@ -12,15 +12,13 @@ public class WaveConfig : ScriptableObject
     [SerializeField] private int numberOfEnemies = 5;
     [SerializeField] private float moveSpeed = 2f;
 
-    public GameObject GetEnemyPrefab() { Debug.Log("Get enemy prefab"); return enemyPrefab; }
+    public GameObject GetEnemyPrefab() { return enemyPrefab; }
 
     public List<Transform> GetWayPoints()
     {
-        Debug.Log("Get Way points");
         var waveWayPoint = new List<Transform>();
         foreach (Transform child in pathPrefab.transform)
         {
-            Debug.Log("Get child " + child);
             waveWayPoint.Add(child);
         }
         return waveWayPoint;
