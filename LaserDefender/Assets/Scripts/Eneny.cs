@@ -14,6 +14,9 @@ public class Eneny : MonoBehaviour
     [SerializeField] private GameObject laserPrefab;
     [SerializeField] private float projectileSpeed = 10f;
 
+    [SerializeField] private GameObject deathVFX;
+    [SerializeField] private float durationExplosion = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,7 +58,14 @@ public class Eneny : MonoBehaviour
         damageDealer.Hit();
         if (health <= 0)
         {
-            Destroy(this.gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        Destroy(this.gameObject);
+        var explosion = Instantiate(deathVFX, transform.position, transform.rotation);
+        Destroy(explosion, durationExplosion);
     }
 }
