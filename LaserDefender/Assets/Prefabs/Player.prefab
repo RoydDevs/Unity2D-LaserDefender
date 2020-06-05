@@ -102,6 +102,12 @@ MonoBehaviour:
   projectileSpeed: 20
   projectileFiringPeriod: 0.2
   health: 300
+  shootSound: {fileID: 8300000, guid: 613542f838837724a95c9d20a5b20b57, type: 3}
+  shootSoundVolume: 0.1
+  touchSound: {fileID: 8300000, guid: 1e0734a73c5a67b4e80c5b4c47a24a81, type: 3}
+  touchSoundVolume: 0.1
+  deathSound: {fileID: 8300000, guid: 7169b74bf4d54be458c8ceeb17a34bed, type: 3}
+  deathSoundVolume: 0.5
 --- !u!60 &4643287144992381435
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -119,7 +125,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.12, y: 0.75}
+    oldSize: {x: 1.8666667, y: 1.25}
     newSize: {x: 0.99, y: 0.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Net;
-using System.Security.Cryptography;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Eneny : MonoBehaviour
 {
@@ -16,6 +12,11 @@ public class Eneny : MonoBehaviour
 
     [SerializeField] private GameObject deathVFX;
     [SerializeField] private float durationExplosion = 1f;
+
+    [SerializeField] private AudioClip shootSound;
+    [SerializeField] [Range(0, 1)] private float shootSoundVolume = 0.7f;
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] [Range(0,1)] private float deathSoundVolume = 0.7f;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,7 @@ public class Eneny : MonoBehaviour
     {
         var laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
         laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
+        AudioSource.PlayClipAtPoint(shootSound, this.transform.position, shootSoundVolume);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -67,5 +69,6 @@ public class Eneny : MonoBehaviour
         Destroy(this.gameObject);
         var explosion = Instantiate(deathVFX, transform.position, transform.rotation);
         Destroy(explosion, durationExplosion);
+        AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position, deathSoundVolume);
     }
 }
