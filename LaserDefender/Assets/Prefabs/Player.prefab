@@ -106,8 +106,8 @@ MonoBehaviour:
   shootSoundVolume: 0.1
   touchSound: {fileID: 8300000, guid: 1e0734a73c5a67b4e80c5b4c47a24a81, type: 3}
   touchSoundVolume: 0.1
-  deathSound: {fileID: 8300000, guid: ad65a00f1c7b334438b97d95ea2f59d1, type: 3}
-  deathSoundVolume: 0.5
+  deathSound: {fileID: 8300000, guid: 6cbb12c4e4975944687a7eeae7b26d62, type: 3}
+  deathSoundVolume: 1
 --- !u!60 &4643287144992381435
 PolygonCollider2D:
   m_ObjectHideFlags: 0
