@@ -700,6 +700,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5894568908231842662, guid: eac3f361efa12bf4f963cdc7a65b2abc,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.042
+      objectReference: {fileID: 0}
     - target: {fileID: 5894568908231842680, guid: eac3f361efa12bf4f963cdc7a65b2abc,
         type: 3}
       propertyPath: m_Name
@@ -880,6 +885,11 @@ PrefabInstance:
         type: 3}
       propertyPath: projectile
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 744418663876590511, guid: 4d5289a990d39ae4aa37d7ffcb350624,
+        type: 3}
+      propertyPath: health
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 744418663876590512, guid: 4d5289a990d39ae4aa37d7ffcb350624,
         type: 3}

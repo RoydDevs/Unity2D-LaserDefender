@@ -3,6 +3,7 @@
 public class GameSession : MonoBehaviour
 {
     private int score = 0;
+    private int health = 300;
 
     private void Awake()
     {

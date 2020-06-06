@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float projectileFiringPeriod = 0.1f;
 
     [Header("Player life")] 
-    [SerializeField] private float health = 100;
+    [SerializeField] private int health = 100;
     [SerializeField] private AudioClip shootSound;
     [SerializeField] [Range(0, 1)] private float shootSoundVolume = 0.25f;
     [SerializeField] private AudioClip touchSound;
@@ -63,6 +63,11 @@ public class Player : MonoBehaviour
         FindObjectOfType<Level>().LoadGameOver();
         Destroy(this.gameObject);
         AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position, deathSoundVolume);
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 
     private void Fire()
