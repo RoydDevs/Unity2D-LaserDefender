@@ -2,17 +2,22 @@
 
 public class Eneny : MonoBehaviour
 {
+    [Header("Enemy Stats")]
     [SerializeField] private float health = 100;
+    [SerializeField] private int scoreValue = 100;
+
+    [Header("Shooting")]
     [SerializeField] private float shotCounter;
     [SerializeField] private float minTimeBetweenShots = 0.2f;
     [SerializeField] private float maxTimeBetweenShots = 3f;
-
     [SerializeField] private GameObject laserPrefab;
     [SerializeField] private float projectileSpeed = 10f;
 
+    [Header("Death")]
     [SerializeField] private GameObject deathVFX;
     [SerializeField] private float durationExplosion = 1f;
 
+    [Header("Sound Effects")]
     [SerializeField] private AudioClip shootSound;
     [SerializeField] [Range(0, 1)] private float shootSoundVolume = 0.7f;
     [SerializeField] private AudioClip deathSound;
@@ -66,6 +71,7 @@ public class Eneny : MonoBehaviour
 
     private void Die()
     {
+        FindObjectOfType<GameSession>().AddToScore(scoreValue);
         Destroy(this.gameObject);
         var explosion = Instantiate(deathVFX, transform.position, transform.rotation);
         Destroy(explosion, durationExplosion);
